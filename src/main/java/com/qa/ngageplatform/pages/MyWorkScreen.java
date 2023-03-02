@@ -336,7 +336,7 @@ public class MyWorkScreen {
 	public WorkItemsScreen clickOnActivityALink() {
 		try {
 			eleUtil.wait(1);
-			eleUtil.waitForElementPresence(this.activityALink, 20);
+			eleUtil.waitForElementToBeClickable(this.activityALink, 20);
 			eleUtil.doClick(this.activityALink);
 			eleUtil.wait(1);
 			ExtentReportListener.test.get().log(Status.INFO,

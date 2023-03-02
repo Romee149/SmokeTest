@@ -49,9 +49,9 @@ public class ReportPage {
 		Actions action = new Actions(driver);
 		WebElement element = driver.findElement(this.securityManagementLink);
 		action.doubleClick(element).perform();
-		eleUtil.waitForElementPresence(this.userListingLink, 50);
+		eleUtil.waitForElementPresence(this.userListingLink, 60);
 		eleUtil.doClick(this.userListingLink);
-		eleUtil.waitForElementPresence(this.reportFrame, 50);
+		eleUtil.waitForElementPresence(this.reportFrame, 60);
 		return this;
 	}
 

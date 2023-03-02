@@ -488,7 +488,7 @@ public class WorkItemsScreen {
 	 */
 	public WorkItemsScreen clickOnProcessDueDateColumnHeader() {
 		this.switchToFrame();
-		eleUtil.waitForElementPresence(this.processDueDateColumnHeader, 20);
+		eleUtil.waitForElementToBeClickable(this.processDueDateColumnHeader, 20);
 		eleUtil.doClick(this.processDueDateColumnHeader);
 		eleUtil.switchToDefaultContent();
 		return this;
@@ -523,7 +523,9 @@ public class WorkItemsScreen {
 	 */
 	public WorkItemsScreen goToPage(String paginationNumber) {
 		this.enterPaginationNumber(paginationNumber);
-		eleUtil.pressEnterKey();
+		this.switchToFrame();
+		eleUtil.pressEnterKey(this.paginationTextField);
+		eleUtil.switchToDefaultContent();
 		return this;
 	}
 

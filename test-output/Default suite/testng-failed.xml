@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.ngageplatform.tests.MyWorkTest">
+      <class name="com.qa.ngageplatform.tests.HomePageTest">
         <methods>
           <include name="setup"/>
-          <include name="verifyRouteActivityC_MW010"/>
+          <include name="verifyUploadedPDFDocument_HOME008"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.ngageplatform.tests.MyWorkTest -->
+      </class> <!-- com.qa.ngageplatform.tests.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

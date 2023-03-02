@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -58,7 +59,8 @@ public class ElementUtil {
         doClear(locator);
         getElement(locator).sendKeys(value);
     }
-
+    
+    
     /**
      * This method is used to click on element
      *
@@ -347,7 +349,16 @@ public class ElementUtil {
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(this.getElement(locator))));
     }
 
-    
+    /**
+     * This method is used to wait for the Element to be clickable
+     *
+     * @param locator Locator in By Format
+     * @param timeOut Timeout/Wait in Int Format
+     */
+    public void waitForElementToBeClickable(By locator, int timeOut) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+        wait.until(ExpectedConditions.elementToBeClickable(this.getElement(locator)));
+    }
     
 
     /**************** frame util *****************/
@@ -511,16 +522,8 @@ public class ElementUtil {
     /**
      * This method is used to press Enter Key
      */
-    public void pressEnterKey() {
-        Robot robot;
-        try {
-            robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-        } catch (AWTException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    public void pressEnterKey(By element) {       
+    	this.getElement(element).sendKeys(Keys.ENTER);   
     }
 
 

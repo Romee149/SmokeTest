@@ -85,7 +85,6 @@ public class HomePageTest extends BaseTest {
 		mainPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		mainPage.createNewDocumentWithStringField("WMI Menu", "WMI Menu BOV Vertical", "MyTest", "A3_103.pdf");
 		newDocScreen = mainPage.getHomeDocumentsListPage().sortDocumentListByDocID().clickFirstAvailableDocType();
-		// homeDocListTable.clickFirstAvailableDocType();
 		newDocScreen.switchToDocIDNewPageScreen();
 		String actualPageCount = newDocScreen.getUploadedDocPageInfo();
 
