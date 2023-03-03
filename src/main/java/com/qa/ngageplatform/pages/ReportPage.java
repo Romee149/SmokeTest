@@ -82,8 +82,8 @@ public class ReportPage {
 		int count = 0;
 		try {
 			eleUtil.switchToFrameIfExists(this.reportFrame, 40);
-			eleUtil.switchToFrame(this.reportUserListingFrame, 50);
-			eleUtil.waitForElementPresence(this.lineChart, 50);
+			eleUtil.switchToFrame(this.reportUserListingFrame, 60);
+			eleUtil.waitForElementPresence(this.lineChart, 60);
 			count = eleUtil.getAllOptionsOfElement(this.lineChart).size();
 			ExtentReportListener.test.get().log(Status.INFO, "Fetching line Graph line Count successfully");
 			eleUtil.switchToDefaultContent();
