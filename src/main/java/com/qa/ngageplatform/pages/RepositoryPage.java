@@ -381,6 +381,7 @@ public class RepositoryPage {
 			e.printStackTrace();
 		}
 		eleUtil.doClick(this.recallButton);
+		eleUtil.wait(1);
 		eleUtil.switchToDefaultContent();
 	}
 
