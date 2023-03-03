@@ -336,7 +336,7 @@ public class MyWorkScreen {
 	public WorkItemsScreen clickOnActivityALink() {
 		try {
 			eleUtil.wait(1);
-			eleUtil.waitForElementToBeClickable(this.activityALink, 20);
+			eleUtil.waitForElementPresence(this.activityALink, 40);
 			eleUtil.doClick(this.activityALink);
 			eleUtil.wait(1);
 			ExtentReportListener.test.get().log(Status.INFO,
@@ -356,7 +356,7 @@ public class MyWorkScreen {
 	 */
 	public MyWorkScreen rightClickOnActivityALink() {
 		try {
-			eleUtil.waitForElementPresence(this.activityALink, 20);
+			eleUtil.waitForElementPresence(this.activityALink, 40);
 			eleUtil.doRightClickOnElement(this.activityALink);
 			ExtentReportListener.test.get().log(Status.INFO,
 					"Right clicked on \'Activity A\' link under \'Closure Action\' link successfully");
@@ -375,7 +375,7 @@ public class MyWorkScreen {
 	 */
 	public MyWorkScreen rightClickOnActivity1Link() {
 		try {
-			eleUtil.waitForElementPresence(this.activity1Link, 20);
+			eleUtil.waitForElementPresence(this.activity1Link, 40);
 			eleUtil.doRightClickOnElement(this.activity1Link);
 			ExtentReportListener.test.get().log(Status.INFO,
 					"Right clicked on \'Activity1\' link under \'Reload On Postback\' link successfully");
@@ -395,7 +395,7 @@ public class MyWorkScreen {
 	public List<String> getRightClickOptions() {
 		List<String> options = new ArrayList<String>();
 		try {
-			eleUtil.waitForElementPresence(this.rightClickedOptions, 20);
+			eleUtil.waitForElementPresence(this.rightClickedOptions, 40);
 			options = eleUtil.getAllOptionsOfElement(this.rightClickedOptions);
 			ExtentReportListener.test.get().log(Status.INFO,
 					"Fetching all options when right clicked on \'Activity A\' link under \'Closure Action\' link successfully");
