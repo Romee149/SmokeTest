@@ -105,7 +105,7 @@ public class ReportPage {
 		int count = 0;
 		try {
 			eleUtil.switchToFrameIfExists(this.reportFrame, 40);
-			eleUtil.switchToFrame(this.reportAllWorkItemErrorFrame, 50);
+			eleUtil.switchToFrame(this.reportAllWorkItemErrorFrame, 60);
 			eleUtil.waitForElementPresence(this.lineChart, 50);
 			count = eleUtil.getAllOptionsOfElement(this.lineChart).size();
 			ExtentReportListener.test.get().log(Status.INFO, "Fetching line Graph line Count successfully");
@@ -142,12 +142,12 @@ public class ReportPage {
 	public int getUserListingUdatedResultCreatedBy() {
 		int count = 0;
 		try {
-			eleUtil.switchToFrameIfExists(this.reportFrame, 20);
-			eleUtil.switchToFrame(this.reportUserListingFrame, 20);
+			eleUtil.switchToFrameIfExists(this.reportFrame, 40);
+			eleUtil.switchToFrame(this.reportUserListingFrame, 40);
 			eleUtil.doClick(this.showFilters);
 			eleUtil.doDropDownSelectByVisibleText(this.filterField, "Created By");
 			eleUtil.doClick(this.updateResult);
-			eleUtil.waitForElementPresence(this.lineChart, 20);
+			eleUtil.waitForElementPresence(this.lineChart, 40);
 			count = eleUtil.getAllOptionsOfElement(this.lineChart).size();
 			ExtentReportListener.test.get().log(Status.PASS, "Fetching line Graph line Count successfully");
 			eleUtil.switchToDefaultContent();
@@ -164,15 +164,15 @@ public class ReportPage {
 	 * @return This will return result in string of user id info from output result
 	 */
 	public String verifyUpdateResultByUserIdForUserGroupListing() {
-			eleUtil.switchToFrameIfExists(this.reportFrame, 20);
-			eleUtil.switchToFrame(this.reportUserGroupListingFrame, 20);
+			eleUtil.switchToFrameIfExists(this.reportFrame, 40);
+			eleUtil.switchToFrame(this.reportUserGroupListingFrame, 40);
 			
 			eleUtil.doDropDownSelectByVisibleText(this.filterFieldGroupListing, "User ID");
 			eleUtil.doDropDownSelectByVisibleText(this.operatorGroupListing, "Equals");
 			eleUtil.doSendKeys(this.valueGroupListing, "100002");
 			eleUtil.doClick(this.updateResult);
 			eleUtil.wait(2);
-			eleUtil.waitForElementPresence(this.reportResultId, 20);
+			eleUtil.waitForElementPresence(this.reportResultId, 40);
 			String result = eleUtil.doGetText(this.reportResultId);
 			eleUtil.switchToDefaultContent();
 			return result;

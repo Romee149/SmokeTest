@@ -119,8 +119,12 @@ public class HomeScreen {
     public HomeScreen clickOnDocIDColumnHeader() {
         this.switchToPageFrame();
         eleUtil.wait(5);
-        eleUtil.waitForElementToBeClickable(this.docID,20);
-        eleUtil.doClick(this.docID);        
+        eleUtil.waitForElementPresence(this.docID,40);
+        try{
+        	eleUtil.doClick(this.docID);        
+        }catch(Exception e) {
+        	eleUtil.doClick(this.docID);
+        }
         eleUtil.switchToDefaultContent();
         return this;
     }

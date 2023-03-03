@@ -488,8 +488,12 @@ public class WorkItemsScreen {
 	 */
 	public WorkItemsScreen clickOnProcessDueDateColumnHeader() {
 		this.switchToFrame();
-		eleUtil.waitForElementToBeClickable(this.processDueDateColumnHeader, 20);
-		eleUtil.doClick(this.processDueDateColumnHeader);
+		eleUtil.waitForElementPresence(this.docID,40);
+		try {
+			eleUtil.doClick(this.processDueDateColumnHeader);
+		}catch(Exception e) {
+			eleUtil.doClick(this.processDueDateColumnHeader);
+		}		
 		eleUtil.switchToDefaultContent();
 		return this;
 	}
