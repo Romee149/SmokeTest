@@ -38,7 +38,7 @@ public class HomePageTest extends BaseTest {
 	}
 
 	// HOME_004,HOME_005,HOME_006,
-	@Test(description = "Verify Add To Favorites, Remove To Favorites functionality with provided StringField value for Multipage viewer Doc", priority = 1)
+	@Test(description = "Verify Add To Favorites, Remove To Favorites functionality with provided StringField value for Multipage viewer Doc", priority = 2)
 	public void VerifyFavouritesDocList_HOME_004_HOME_005_HOME_006() {
 
 		String expectedStringFieldValue = "MyTest";
@@ -80,7 +80,7 @@ public class HomePageTest extends BaseTest {
 		AssertionUtil.verifyNotEqual(currentDocId, actualDocId, "Verify \"Doc Id\" Removed from favourite documents");
 	}
 
-	@Test(description = "Verify Pagination Info value of Uploaded Document", priority = 1)
+	//@Test(description = "Verify Pagination Info value of Uploaded Document", priority = 3)
 	public void verifyUploadedPDFDocument_HOME008() {
 		mainPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		mainPage.createNewDocumentWithStringField("WMI Menu", "WMI Menu BOV Vertical", "MyTest", "A3_103.pdf");

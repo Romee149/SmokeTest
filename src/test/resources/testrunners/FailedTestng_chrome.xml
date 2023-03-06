@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="nGage Platform" verbose="4" thread-count="1" parallel="classes">
+
+	<listeners>
+		<listener
+			class-name="com.qa.ngageplatform.listeners.AnnotationTransformer" />
+		<!--<listener
+			class-name="com.qa.ngagee.listeners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.ngageplatform.listeners.TestAllureListener" /> -->
+	</listeners>
+
+	<test name="nGgage Smoke Suite">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.ngageplatform.tests.HomePageTest" >
+				<methods>
+					<include name="VerifyFavouritesDocList_HOME_004_HOME_005_HOME_006"/>
+					<include name="verifyRecentDocumentList_HOME_001_HOME_002_HOME_003_HOME007_HOME009" />
+				</methods>
+			</class>
+			<class name="com.qa.ngageplatform.tests.MyWorkTest" >
+				<methods>
+					<include name="verifyAssignedWorkItem"/>
+					<include name="verifyProcessDueDateBetweenStartAndEndRange_MW005_MW006"/>
+					<include name ="verifyProcessDueDateEndRange_MW004"/>
+					<include name = "verifyProcessDueDateStartRange_MW003"/>
+				</methods>
+			</class>
+			<class name="com.qa.ngageplatform.tests.MyWorkSimplifiedTest" >
+				<methods>
+					<include name="verifyWindowInfoAndCount_MWS007"/>
+				</methods>
+			</class>
+			<class name="com.qa.ngageplatform.tests.RepositoryTest" >
+				<methods>
+					<include name="verifySearchResultForDateTimeDoc_Repo003_To_Repo008"/>
+				</methods>
+			</class>  
+			<class name="com.qa.ngageplatform.tests.WMITest" >
+				<methods>
+					<include name="VerifyNewLinkDefaultTab_WMI5_WMI6"/>
+					<include name="verifyCategoryMenuTab_WMI7"/>
+					
+				</methods>
+			</class> 	
+		</classes>
+	
+		
+	</test>
+
+</suite>

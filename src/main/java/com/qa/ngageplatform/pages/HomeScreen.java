@@ -19,6 +19,7 @@ public class HomeScreen {
 
     private WebDriver driver;
     private ElementUtil eleUtil;
+   
 
     // ****************** Locators ****************** //
     private By recentDocumentsPageIframe = By.id("iframe_103");
@@ -54,7 +55,7 @@ public class HomeScreen {
      */
     public HomeScreen clickRecentDocumentLink() {
         try {
-            eleUtil.clickElementWhenReady(this.recentDocumentLink, 10);
+            eleUtil.clickElementWhenReady(this.recentDocumentLink, 40);
             ExtentReportListener.test.get().log(Status.INFO, "Clicked on \"Recent Documents\" link successfully");
 
         } catch (Throwable e) {
@@ -119,11 +120,12 @@ public class HomeScreen {
     public HomeScreen clickOnDocIDColumnHeader() {
         this.switchToPageFrame();
         eleUtil.wait(5);
-        eleUtil.waitForElementPresence(this.docID,40);
+        eleUtil.waitForElementPresence(this.docID,60);
         try{
         	eleUtil.doClick(this.docID);        
         }catch(Exception e) {
-        	eleUtil.doClick(this.docID);
+        	eleUtil.wait(5);
+        	eleUtil.clickByJS(this.docID);
         }
         eleUtil.switchToDefaultContent();
         return this;

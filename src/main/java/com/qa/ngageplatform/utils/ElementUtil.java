@@ -630,5 +630,10 @@ public void doSelectDropDownValue(By locator, String value) {
 		action.moveToElement(driver.findElement(webElement))
 				.click(driver.findElement(webElement)).build().perform();
 	}
+	
+	
+	public void clickByJS(By webElement) {
+		jsUtil.clickElementByJS(driver.findElement(webElement));
+	}
 
 }

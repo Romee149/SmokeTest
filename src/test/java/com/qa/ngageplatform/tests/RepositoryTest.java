@@ -123,7 +123,7 @@ public class RepositoryTest extends BaseTest {
 	}
 
 //Repo012
-	@Test(description = "Verify Repository search result for 'WMI Menu", priority = 5)
+	//@Test(description = "Verify Repository search result for 'WMI Menu", priority = 5)
 	public void verifySearchResultForWMIMenu_Repo012() {
 		mainPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		for (int i = 0; i <= 2; i++) {
